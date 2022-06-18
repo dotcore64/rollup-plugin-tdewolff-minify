@@ -1,0 +1,56 @@
+{
+  "name": "rollup-plugin-tdewolff-minify",
+  "version": "0.0.1",
+  "description": "Rollup plugin to minify generated es bundle using tdewolff minifier",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint --cache .",
+    "test": "mocha",
+    "cover": "c8 npm test"
+  },
+  "bugs": {
+    "url": "https://github.com/dotcore64/rollup-plugin-tdewolff-minify/issues"
+  },
+  "homepage": "https://github.com/dotcore64/rollup-plugin-tdewolff-minify#readme",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiogen/rollup-plugin-terser.git"
+  },
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "minify"
+  ],
+  "author": "Julian Grinblat <julian@dotcore.co.il>",
+  "license": "MIT",
+  "dependencies": {
+    "tdewolff-minify": "^0.9.0"
+  },
+  "peerDependencies": {
+    "rollup": "^2.0.0"
+  },
+  "devDependencies": {
+    "c8": "^7.11.3",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-mocha": "^10.0.5",
+    "eslint-plugin-n": "^15.2.3",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "mocha": "^10.0.0",
+    "rollup": "^2.67.2"
+  }
+}
