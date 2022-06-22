@@ -33,13 +33,12 @@
   ],
   "author": "Julian Grinblat <julian@dotcore.co.il>",
   "license": "MIT",
-  "dependencies": {
-    "tdewolff-minify": "^0.9.0"
-  },
   "peerDependencies": {
+    "@tdewolff/minify": "^2.11.11",
     "rollup": "^2.0.0"
   },
   "devDependencies": {
+    "@tdewolff/minify": "^2.11.11",
     "c8": "^7.11.3",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",

@@ -22,14 +22,6 @@ describe('minify', () => {
     expect(output.map).to.equal(null);
   });
 
-  it('should pass custom cli options to minify', async () => {
-    const bundle = await rollup({
-      input: 'test/fixtures/unminified.js',
-      plugins: [minify({ customCliOptions: ['-h'] })],
-    });
-    return expect(bundle.generate({ format: 'cjs' })).to.be.rejectedWith(Error, /^Usage: /);
-  });
-
   it('minify multiple outputs', async () => {
     const bundle = await rollup({
       input: 'test/fixtures/unminified.js',
