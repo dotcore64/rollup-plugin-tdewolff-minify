@@ -1,6 +1,6 @@
 import minify from '@tdewolff/minify';
 
-export default function (options = {}) {
+export default function () {
   return {
     name: 'tdewolff-minify',
 
