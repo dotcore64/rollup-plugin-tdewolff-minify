@@ -41,6 +41,30 @@ describe('minify', () => {
     expect(output2.code).to.equal('window.a=5,window.a<3&&console.log(4)\n');
   });
 
+  it('should accept minify options', async () => {
+    {
+      const bundle = await rollup({
+        input: 'test/fixtures/keep-var.js',
+        plugins: [minify({ options: { 'js-keep-var-names': true } })],
+      });
+      const result = await bundle.generate({ format: 'esm' });
+      expect(result.output).to.have.lengthOf(1);
+      const [output] = result.output;
+      expect(output.code).to.equal('x=function(){var twice;twice++,console.log(twice)}\n');
+    }
+
+    {
+      const bundle = await rollup({
+        input: 'test/fixtures/keep-var.js',
+        plugins: [minify({ options: { 'js-keep-var-names': false } })],
+      });
+      const result = await bundle.generate({ format: 'esm' });
+      expect(result.output).to.have.lengthOf(1);
+      const [output] = result.output;
+      expect(output.code).to.equal('x=function(){var e;e++,console.log(e)}\n');
+    }
+  });
+
   it('minify esm module', async () => {
     const bundle = await rollup({
       input: 'test/fixtures/plain-file.js',
