@@ -1,13 +1,19 @@
-import minify from '@tdewolff/minify';
+import Piscina from 'piscina';
 
-export default function () {
+export default function ({ maxThreads, minThreads, options } = {}) {
+  const pool = new Piscina({
+    filename: new URL('worker.js', import.meta.url).href,
+    ...maxThreads !== undefined ? { maxThreads } : {},
+    ...minThreads !== undefined ? { minThreads } : {},
+  });
+
   return {
     name: 'tdewolff-minify',
 
     async renderChunk(code/* , chunk, outputOptions */) {
       try {
         return {
-          code: await minify.string('application/javascript', code),
+          code: await pool.run({ code, options }),
           map: null, // https://github.com/tdewolff/minify/issues/25
         };
       } catch (e) {
