@@ -1,7 +1,7 @@
-import Piscina from 'piscina';
+import Pool from 'tinypool';
 
 export default function ({ maxThreads, minThreads, options } = {}) {
-  const pool = new Piscina({
+  const pool = new Pool({
     filename: new URL('worker.js', import.meta.url).href,
     ...maxThreads !== undefined ? { maxThreads } : {},
     ...minThreads !== undefined ? { minThreads } : {},
