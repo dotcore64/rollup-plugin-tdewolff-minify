@@ -9,7 +9,7 @@
 ## Install
 
 ```
-$ npm install --save-dev rollup-plugin-tdewolff-minify
+$ npm install --save-dev rollup-plugin-tdewolff-minify @tdewolff/minify
 ```
 
 ## Usage
@@ -26,16 +26,29 @@ export default {
     file: 'dist/bundle.js',
     format: 'esm',
   },
-  plugins: [
-    minify({
-      maxConcurrency: 4, // by default this is the number of CPU cores
-      customCliOptions: ['--my-custom-option=foo'],
-    })
-  ]
+  plugins: [minify()]
 };
 ```
 
-For more details on the options, please check https://github.com/JoakimCh/tdewolff-minify
+## Options
+
+### `minThreads`
+Type: `number`
+Default: `undefined`
+
+Sets the minimum number of threads that are always running for this thread pool. The default is based on the number of available CPUs.
+
+### `maxThreads`
+Type: `number`
+Default: `undefined`
+
+Sets the maximum number of threads that are running for this thread pool. The default is based on the number of available CPUs.
+
+### `options`
+Type: `object`
+Default: `undefined`
+
+Minify options, see https://github.com/tdewolff/minify/tree/master/bindings/js#usage.
 
 [build-badge]: https://img.shields.io/github/workflow/status/dotcore64/rollup-plugin-tdewolff-minify/test/master?style=flat-square
 [build]: https://github.com/dotcore64/rollup-plugin-tdewolff-minify/actions

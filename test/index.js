@@ -22,14 +22,6 @@ describe('minify', () => {
     expect(output.map).to.equal(null);
   });
 
-  it('should pass custom cli options to minify', async () => {
-    const bundle = await rollup({
-      input: 'test/fixtures/unminified.js',
-      plugins: [minify({ customCliOptions: ['-h'] })],
-    });
-    return expect(bundle.generate({ format: 'cjs' })).to.be.rejectedWith(Error, /^Usage: /);
-  });
-
   it('minify multiple outputs', async () => {
     const bundle = await rollup({
       input: 'test/fixtures/unminified.js',
@@ -47,6 +39,30 @@ describe('minify', () => {
       '"use strict";window.a=5,window.a<3&&console.log(4)\n',
     );
     expect(output2.code).to.equal('window.a=5,window.a<3&&console.log(4)\n');
+  });
+
+  it('should accept minify options', async () => {
+    {
+      const bundle = await rollup({
+        input: 'test/fixtures/keep-var.js',
+        plugins: [minify({ options: { 'js-keep-var-names': true } })],
+      });
+      const result = await bundle.generate({ format: 'esm' });
+      expect(result.output).to.have.lengthOf(1);
+      const [output] = result.output;
+      expect(output.code).to.equal('x=function(){var twice;twice++,console.log(twice)}\n');
+    }
+
+    {
+      const bundle = await rollup({
+        input: 'test/fixtures/keep-var.js',
+        plugins: [minify({ options: { 'js-keep-var-names': false } })],
+      });
+      const result = await bundle.generate({ format: 'esm' });
+      expect(result.output).to.have.lengthOf(1);
+      const [output] = result.output;
+      expect(output.code).to.equal('x=function(){var e;e++,console.log(e)}\n');
+    }
   });
 
   it('minify esm module', async () => {
