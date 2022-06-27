@@ -30,6 +30,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Use golang to build minify
+        if: matrix.os == 'windows-latest'
+        uses: actions/setup-go@v3
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
