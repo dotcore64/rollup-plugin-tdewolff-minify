@@ -14,7 +14,7 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          # - macos-latest
+          - macos-11 # macos-latest is 10.2 as of june 2022
           # - windows-latest
         node-version:
           - 14.x
