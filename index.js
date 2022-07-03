@@ -1,4 +1,5 @@
 import Pool from 'tinypool';
+import '@tdewolff/minify'; // https://github.com/tdewolff/minify/pull/510
 
 export default function ({ maxThreads, minThreads, options } = {}) {
   const pool = new Pool({
@@ -20,6 +21,10 @@ export default function ({ maxThreads, minThreads, options } = {}) {
         console.error(e.message); // eslint-disable-line no-console
         throw e;
       }
+    },
+
+    closeBundle() {
+      return pool.destroy();
     },
   };
 }

@@ -22,6 +22,15 @@ describe('minify', () => {
     expect(output.map).to.equal(null);
   });
 
+  it('should destroy the pool when closing the bundle', async () => {
+    const bundle = await rollup({
+      input: 'test/fixtures/unminified.js',
+      plugins: [minify()],
+    });
+    await bundle.generate({ format: 'cjs' });
+    return bundle.close();
+  });
+
   it('minify multiple outputs', async () => {
     const bundle = await rollup({
       input: 'test/fixtures/unminified.js',
