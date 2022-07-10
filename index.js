@@ -1,4 +1,5 @@
 import Pool from 'tinypool';
+import '@tdewolff/minify'; // https://github.com/tdewolff/minify/pull/510
 
 export default function ({ maxThreads, minThreads, options } = {}) {
   const pool = new Pool({
