@@ -39,7 +39,7 @@
   "license": "MIT",
   "peerDependencies": {
     "@tdewolff/minify": "^2.11.13",
-    "rollup": "^2.0.0"
+    "rollup": "^2.0.0 || ^3.0.0"
   },
   "devDependencies": {
     "@tdewolff/minify": "^2.12.4",
