@@ -4,8 +4,8 @@ import '@tdewolff/minify'; // https://github.com/tdewolff/minify/pull/510
 export default function ({ maxThreads, minThreads, options } = {}) {
   const pool = new Pool({
     filename: new URL('worker.js', import.meta.url).href,
-    ...maxThreads !== undefined ? { maxThreads } : {},
-    ...minThreads !== undefined ? { minThreads } : {},
+    ...maxThreads === undefined ? {} : { maxThreads },
+    ...minThreads === undefined ? {} : { minThreads },
   });
 
   return {
