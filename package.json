@@ -54,7 +54,7 @@
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-unicorn": "^45.0.2",
     "mocha": "^10.2.0",
-    "rollup": "^3.9.0"
+    "rollup": "^3.12.0"
   },
   "dependencies": {
     "tinypool": "^0.3.0"
