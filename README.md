@@ -50,7 +50,7 @@ Default: `undefined`
 
 Minify options, see https://github.com/tdewolff/minify/tree/master/bindings/js#usage.
 
-[build-badge]: https://img.shields.io/github/workflow/status/dotcore64/rollup-plugin-tdewolff-minify/test/master?style=flat-square
+[build-badge]: https://img.shields.io/github/actions/workflow/status/dotcore64/rollup-plugin-tdewolff-minify/test.yml?event=push&style=flat-square
 [build]: https://github.com/dotcore64/rollup-plugin-tdewolff-minify/actions
 
 [npm-badge]: https://img.shields.io/npm/v/rollup-plugin-tdewolff-minify.svg?style=flat-square
