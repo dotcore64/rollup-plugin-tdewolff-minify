@@ -17,9 +17,9 @@ jobs:
           # - macos-latest
           # - windows-latest
         node-version:
-          - 14.x
           - 16.x
           - 18.x
+          - 20.x
         rollup-version:
           - ^2.0.0
           - ^3.0.0
