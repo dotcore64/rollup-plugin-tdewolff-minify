@@ -39,7 +39,7 @@
   "license": "MIT",
   "peerDependencies": {
     "@tdewolff/minify": "^2.11.13",
-    "rollup": "^2.0.0 || ^3.0.0"
+    "rollup": "^2.0.0 || ^3.0.0 || ^4.0.0"
   },
   "devDependencies": {
     "@tdewolff/minify": "^2.12.5",
@@ -54,7 +54,7 @@
     "eslint-plugin-n": "^16.1.0",
     "eslint-plugin-unicorn": "^48.0.1",
     "mocha": "^10.2.0",
-    "rollup": "^3.29.4"
+    "rollup": "^4.0.2"
   },
   "dependencies": {
     "tinypool": "^0.8.1"
