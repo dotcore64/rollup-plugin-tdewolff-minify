@@ -42,7 +42,7 @@
     "rollup": "^2.0.0 || ^3.0.0 || ^4.0.0"
   },
   "devDependencies": {
-    "@tdewolff/minify": "^2.20.18",
+    "@tdewolff/minify": "^2.20.19",
     "c8": "^9.1.0",
     "chai": "^4.3.10",
     "chai-as-promised": "^7.1.1",
