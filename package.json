@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-tdewolff-minify",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Rollup plugin to minify generated es bundle using tdewolff minifier",
   "type": "module",
   "exports": {
