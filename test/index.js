@@ -54,7 +54,7 @@ describe('minify', () => {
     {
       const bundle = await rollup({
         input: 'test/fixtures/keep-var.js',
-        plugins: [minify({ options: { 'js-keep-var-names': true } })],
+        plugins: [minify({ options: { jsKeepVarNames: true } })],
       });
       const result = await bundle.generate({ format: 'esm' });
       expect(result.output).to.have.lengthOf(1);

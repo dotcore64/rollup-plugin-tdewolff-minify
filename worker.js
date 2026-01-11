@@ -1,9 +1,3 @@
-import { string, config } from '@tdewolff/minify';
+import { minify } from '@tdewolff/minify';
 
-export default ({ code, options }) => {
-  if (options !== undefined) {
-    config(options);
-  }
-
-  return string('application/javascript', code);
-};
+export default ({ code, options }) => minify('application/javascript', code, options ?? {});

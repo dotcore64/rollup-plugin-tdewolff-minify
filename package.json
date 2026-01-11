@@ -38,12 +38,12 @@
   "author": "Julian Grinblat <julian@dotcore.co.il>",
   "license": "MIT",
   "peerDependencies": {
-    "@tdewolff/minify": "^2.11.13",
+    "@tdewolff/minify": "^2.24.8",
     "rollup": "^2.0.0 || ^3.0.0 || ^4.0.0"
   },
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
-    "@tdewolff/minify": "^2.24.7",
+    "@tdewolff/minify": "^2.24.8",
     "c8": "^10.1.3",
     "chai": "^6.2.2",
     "chai-as-promised": "^8.0.2",
