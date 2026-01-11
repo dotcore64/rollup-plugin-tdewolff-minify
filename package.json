@@ -38,7 +38,7 @@
   "author": "Julian Grinblat <julian@dotcore.co.il>",
   "license": "MIT",
   "peerDependencies": {
-    "@tdewolff/minify": "^2.11.13",
+    "@tdewolff/minify": "^2.24.8",
     "rollup": "^2.0.0 || ^3.0.0 || ^4.0.0"
   },
   "devDependencies": {
