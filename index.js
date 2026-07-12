@@ -17,7 +17,7 @@ export default function ({ maxThreads, minThreads, options } = {}) {
           map: null, // https://github.com/tdewolff/minify/issues/25
         };
       } catch (e) {
-        console.error(e.message); // eslint-disable-line no-console
+        console.error(e.message);  
         throw e;
       }
     },
