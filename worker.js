@@ -1,3 +1,4 @@
-import { minify } from '@tdewolff/minify';
+import { minify } from "@tdewolff/minify";
 
-export default ({ code, options }) => minify('application/javascript', code, options ?? {});
+export default ({ code, options }) =>
+  minify("application/javascript", code, options ?? {});
