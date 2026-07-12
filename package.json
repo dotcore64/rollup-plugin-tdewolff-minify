@@ -8,7 +8,7 @@
     "./package.json": "./package.json"
   },
   "engines": {
-    "node": ">=20"
+    "node": "^20.13.0 || >=22.0.0"
   },
   "files": [
     "index.js",
@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "lint": "eslint --cache .",
-    "test": "mocha",
+    "test": "node --test --import ./test/setup.js ./test/index.js",
     "cover": "c8 npm test"
   },
   "bugs": {

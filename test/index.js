@@ -1,11 +1,9 @@
 import { rollup } from "rollup";
-import { use, expect } from "chai";
+import { expect } from "chai";
 
 // https://github.com/import-js/eslint-plugin-import/issues/1649
 // eslint-disable-next-line import/no-unresolved
 import minify from "rollup-plugin-tdewolff-minify";
-
-use((await import("chai-as-promised")).default); // eslint-disable-line unicorn/no-await-expression-member
 
 describe("minify", () => {
   it("should minify", async () => {
