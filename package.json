@@ -61,6 +61,6 @@
     "rollup": "^4.63.1"
   },
   "dependencies": {
-    "tinypool": "^2.1.0"
+    "tinypool": "^2.1.2"
   }
 }
